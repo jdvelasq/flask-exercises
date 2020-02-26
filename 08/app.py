@@ -1,6 +1,6 @@
 # coding:utf-8
-import os
-os.environ['FLASK_ENV'] = 'development' 
+#import os
+#os.environ['FLASK_ENV'] = 'development' 
 
 from flask import Flask, render_template, redirect, url_for
 app = Flask(__name__)
@@ -20,4 +20,4 @@ def hello():
     return render_template('hello.html', user=user, mylist=mylist)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

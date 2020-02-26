@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <header>
+    <title>example</title>
+  </header>
+  <body>
+    
+    <form id="myDialog">
+      <input type="text" id="fname" name="fname" onchange="compute()" value="{{ data.textvalue }}">
+      <br>
+      <p id='output'>texto de salida </p>
+    </form>
+
+    <script>
+        function compute() {
+            document.getElementById("myDialog").submit()
+        }
+    </script>
+  </body>
+</html>

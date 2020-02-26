@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <header>
+    <title>example</title>
+  </header>
+  <body>
+    
+    <h2>Entrada de datos</h2>
+    <form method="POST">
+      <input type="text" id="fname" name="fname" value="default text">
+      <br>
+      <input type="submit" value="Submit">
+      <br>
+    </form>
+
+    <h2>resultados usando flash</h2>
+
+    <ul>
+      {% for message in get_flashed_messages() %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>

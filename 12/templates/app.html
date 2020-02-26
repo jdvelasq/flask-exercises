@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <header>
+    <title>example</title>
+  </header>
+  <body>
+    
+    <a href='form'>dialog</a>
+
+    <p>{{ data }}</p>
+
+    <ul>
+      {% for message in get_flashed_messages() %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>

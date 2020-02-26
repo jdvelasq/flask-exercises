@@ -1,6 +1,6 @@
 # coding:utf-8
-import os
-os.environ['FLASK_ENV'] = 'development' # development (debug mode) or production?
+#import os
+#os.environ['FLASK_ENV'] = 'development' # development (debug mode) or production?
 
 from flask import Flask, escape, url_for
 app = Flask(__name__)     # nombre del modulo o paquete
@@ -42,6 +42,6 @@ with app.test_request_context():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
 
 # Se ejecuta con python3 app.py

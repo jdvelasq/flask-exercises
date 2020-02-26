@@ -11,6 +11,6 @@ def hello():
     return "Hola Mundo Cruel!"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
 
 # Se ejecuta con python3 app.py
