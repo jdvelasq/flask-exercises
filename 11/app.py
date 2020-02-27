@@ -12,7 +12,6 @@ def index():
     if request.method == 'POST':
         data = request.form['fname']
         flash(data)
-        # flash('hola mundo')
 
     return render_template('index.html')
 
