@@ -2,25 +2,28 @@
 # import os
 # os.environ['FLASK_ENV'] = 'development' 
 
-from flask import Flask, render_template, flash, request, redirect
+from flask import Flask, render_template, flash, request, redirect, session
 app = Flask(__name__) 
 app.config['SECRET_KEY'] = 'you-will-never-guess'
+
+
 
 @app.route('/')           # indica que dirección dispara la función
 @app.route('/index', methods=('GET', 'POST'))
 def index():
-    data = 'data-original'
+    data = session.get('data')
 
-    if request.method == 'POST':
-        data = request.form['fname']
-        flash(data)
+    if data is None:
+        data = 'data-original'
 
     return render_template('app.html', data=data)
 
 
 @app.route('/form', methods=('GET', 'POST'))
 def form():
+
     if request.method == 'POST':
+        session['data'] = request.form['fname']
         return redirect("/index")
 
     return render_template('form.html')
