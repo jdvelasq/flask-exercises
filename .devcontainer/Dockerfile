@@ -48,7 +48,13 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip --disable-pip-version-check --no-cache-dir install flask
+RUN pip --disable-pip-version-check --no-cache-dir install \
+    flask \
+    WTForms \
+    Flask-WTF \
+    pandas \
+    matplotlib \
+    jupyterlab
 
 
 # Switch back to dialog for any ad-hoc use of apt-get
